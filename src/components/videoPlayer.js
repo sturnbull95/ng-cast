@@ -1,18 +1,15 @@
 angular.module('video-player')
 
+.controller('VideoPlayerController', function() {
+  this.videoUrl = () => {
+    return this.video ? `https://www.youtube.com/embed/${this.video.id.videoId}` : '';
+  };
+})
 .component('videoPlayer', {
-  templateUrl: "src/templates/videoPlayer.html",
-  bindings:{
-    video:"<",
-    index:"<",
-    url:"<",
-    play:"<"
 
+  bindings: {
+    video: '<'
   },
-  controller: 'videoPlayerController'
-}).controller('videoPlayerController', function(){
-    this.iframes = function(id){
-      return 'https://www.youtube.com/embed/' + id
-    }
-  }
-)
+  controller: 'VideoPlayerController',
+  templateUrl: 'src/templates/videoPlayer.html'
+  });
