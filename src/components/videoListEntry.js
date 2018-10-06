@@ -4,5 +4,7 @@ angular.module('video-player')
   bindings:{
     video:"<",
     index:"<",
+    handleClick:"<",
+    play:"<"
   }
 });

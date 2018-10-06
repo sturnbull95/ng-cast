@@ -5,7 +5,8 @@ angular.module('video-player')
   bindings:{
     video:"<",
     index:"<",
-    url:"<"
+    url:"<",
+    play:"<"
 
   },
   controller: 'videoPlayerController'
